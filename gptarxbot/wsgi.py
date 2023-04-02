@@ -1,5 +1,5 @@
 """
-WSGI config for gptarx project.
+WSGI config for gptarxbot project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gptarx.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gptarxbot.settings")
 
 from django.core.wsgi import get_wsgi_application
 
