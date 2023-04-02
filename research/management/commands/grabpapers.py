@@ -36,7 +36,7 @@ class Command(BaseCommand):
             )
             
             for p in search.results():
-                paper, _ = Paper.objects.get_or_create(short_id=p.get_short_id())
+                paper, created = Paper.objects.get_or_create(short_id=p.get_short_id())
                 paper.subject = s
                 paper.title = p.title
                 paper.summary = p.summary
@@ -45,5 +45,5 @@ class Command(BaseCommand):
                 paper.authors = self.get_authors(p.authors)
                 paper.save()
                 
-                if enable_telegram_channel_flag:
+                if enable_telegram_channel_flag and created:
                     telegram_send_to_channel(paper)
