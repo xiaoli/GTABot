@@ -16,6 +16,7 @@ import research.views
 
 urlpatterns = [
     path("", research.views.index, name="index"),
-    path("db/", research.views.db, name="db"),
+    path("subjects/", research.views.subjects, name="subjects"),
+    path("api/mark_as_read/", research.views.mark_as_read, name="mark_as_read"),
     path("admin/", admin.site.urls),
 ]

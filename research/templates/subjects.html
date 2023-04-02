@@ -5,13 +5,13 @@
   <div class="container">
 
 
-<h2>Page View Report</h2>
+<h2>Subjects</h2>
 
 
 <ul>
 
-{% for greeting in greetings %}
-    <li>{{ greeting.when }}</li>
+{% for s in subjects %}
+    <li>{{ s.name }} - {{ s.keywords}}</li>
 {% endfor %}
 
 </ul>

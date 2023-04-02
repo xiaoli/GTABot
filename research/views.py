@@ -1,19 +1,30 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404
 
 from .models import Subject, Paper
 
-# Create your views here.
+@login_required(login_url='/admin/login/')
 def index(request):
-    # return HttpResponse('Hello from Python!')
-    return render(request, "index.html")
+    paper_list = Paper.objects.all().order_by('-published_date')
+    return render(request, "index.html", {"paper_list": paper_list})
 
+@login_required(login_url='/admin/login/')
+def subjects(request):
+    subjects = Subject.objects.all()
+    return render(request, "subjects.html", {"subjects": subjects})
 
-def db(request):
-
-    greeting = Subject()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "db.html", {"greetings": greetings})
+@login_required(login_url='/admin/login/')
+@csrf_exempt
+def mark_as_read(request):
+    paper_id = request.GET['pid']
+    p = get_object_or_404(Paper, id=paper_id)
+    p.is_read = True
+    p.save()
+    
+    data = {
+        "status": "ok"
+    }
+    return JsonResponse(data, safe=False)
