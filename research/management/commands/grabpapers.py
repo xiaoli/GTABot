@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 from django.core.management.base import BaseCommand, CommandError
 
 from research.models import *
-#from utils import *
+from utils import *
 
 class Command(BaseCommand):
     help = 'Grab all interesting papers from arXiv.org'
@@ -22,6 +22,8 @@ class Command(BaseCommand):
         return output
     
     def handle(self, *args, **kwargs):
+        
+        enable_telegram_channel_flag = os.environ.get('ENABLE_TELEGRAM_CHANNEL_MSG', False).lower() in ('true', '1')
         
         subjects = Subject.objects.all()
 
@@ -42,3 +44,6 @@ class Command(BaseCommand):
                 paper.updated_date = p.updated
                 paper.authors = self.get_authors(p.authors)
                 paper.save()
+                
+                if enable_telegram_channel_flag:
+                    telegram_send_to_channel(paper)
