@@ -23,7 +23,7 @@
               {% for p in paper_list %}
                   <tr id="{{ p.id }}">
                       <td>{{ p.subject.name }}</td>
-                      <td style="word-wrap:break-word;min-width:500px;max-width:800px;">{{ p.title }}</td>
+                      <td style="word-wrap:break-word;min-width:500px;max-width:800px;"><a href="https://arxiv.org/abs/{{p.short_id}}">{{ p.title }}</a></td>
                       <td style="word-wrap:break-word;min-width:50px;max-width:200px;">{{ p.authors }}</td>
                       <td class="is_read"><span class="badge rounded-pill {% if p.is_read %}bg-success{% else %}bg-danger{% endif %}">{% if p.is_read %}Yes{% else %}No{% endif %}</span></td>
                       <td>
