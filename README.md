@@ -66,8 +66,6 @@ Admin >> Home >> Research >> Subjects >> Add Subject
 python manage.py grabpapers
 ```
 
-<hr/>
-
 ## Getting Started on Heroku
 Refer to [Getting Started on Heroku with Python
 ](https://devcenter.heroku.com/articles/getting-started-with-python "Getting Started on Heroku with Python")
