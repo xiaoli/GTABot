@@ -31,7 +31,7 @@ class Command(BaseCommand):
             search = arxiv.Search(
               query = s.keywords,
               max_results = 10,
-              sort_by = arxiv.SortCriterion.Relevance,
+              sort_by = arxiv.SortCriterion.LastUpdatedDate,
               sort_order = arxiv.SortOrder.Descending
             )
             
