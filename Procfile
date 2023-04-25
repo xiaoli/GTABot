@@ -1,1 +1,1 @@
-web: gunicorn gptarxbot.wsgi
+web: gunicorn gtabot.wsgi
