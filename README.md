@@ -10,11 +10,13 @@ Welcome to the GPTarXBot project, an open-source AI-driven bot that helps users 
 * **FAQ Answering**[TODO]: GPTarXBot can answer common questions about papers, such as methodology, results, and impact.
 
 ## Screenshots
-![Homepage](./screenshots/home.jpg "Homepage")
-![Admin Homepage](./screenshots/admin_home.jpg "Admin Homepage")
-![Admin Subject](./screenshots/admin_subject.jpg "Admin Subject")
-![Admin Paper](./screenshots/admin_paper.jpg "Admin Paper")
-![Telegram Channel](./screenshots/telegram.jpg "Telegram Channel")
+|Name|Preview|Note|
+|:-|:-|:-|
+|Homepage|<img src="./screenshots/home.jpg" alt="Homepage" width="300" height="230">||
+|Admin Homepage|<img src="./screenshots/admin_home.jpg" alt="Admin Homepage" width="300" height="230">||
+|Admin Subject|<img src="./screenshots/admin_subject.jpg" alt="Admin Subject" width="300" height="230">||
+|Admin Paper|<img src="./screenshots/admin_paper.jpg" alt="Admin Paper" width="300" height="230">||
+|Telegram Channel|<img src="./screenshots/telegram.jpg" alt="Telegram Channel" width="300" height="230">||
 
 ## Getting Started Locally
 
@@ -75,8 +77,10 @@ Heroku Scheduler >> Add job >> "python manage.py grabpapers" / Every 10 minutes
 
 ### Heroku App Settings >> Config Vars
 Refer to [env_example](./env_example "Example of Vars"):
+```
 TELEGRAM_API_TOKEN='{AAA:BBB}'
 TELEGRAM_CHANNEL_ID=-100{CHANNEL_ID}
 ARXIV_HOST_URL='https://arxiv.org'
 ENABLE_TELEGRAM_CHANNEL_MSG=True
 ARXIV_MAX_RESULTS_COUNT=10
+```
