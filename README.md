@@ -1,6 +1,6 @@
 # GTABot: [GPT + Telegram + arXiv] A GPT-powered Bot for Telegram that enables searching and exploring arXiv papers.
 
-Welcome to the GPTarXBot project, an open-source AI-driven bot that helps users explore and discover research papers on arXiv. This bot is built using the GPT-4 architecture, which empowers it to provide paper summaries, filter papers based on your interests, and answer queries about specific papers or research topics. Our goal is to help researchers, students, and enthusiasts save time and efficiently find relevant research.
+Welcome to the GTABot project, an open-source AI-driven bot that helps users explore and discover research papers on arXiv. This bot is built using the GPT-4 architecture, which empowers it to provide paper summaries, filter papers based on your interests, and answer queries about specific papers or research topics. Our goal is to help researchers, students, and enthusiasts save time and efficiently find relevant research.
 
 ## Features
 
