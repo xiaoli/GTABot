@@ -10,41 +10,59 @@ Welcome to the GPTarXBot project, an open-source AI-driven bot that helps users 
 * **FAQ Answering**[TODO]: GPTarXBot can answer common questions about papers, such as methodology, results, and impact.
 
 ## Screenshots
-![Homepage](./home.jpg "Homepage")
-![Admin Homepage](./admin_home.jpg "Admin Homepage")
-![Admin Subject](./admin_subject.jpg "Admin Subject")
-![Admin Paper](./admin_paper.jpg "Admin Paper")
-![Telegram Channel](./telegram.jpg "Telegram Channel")
+![Homepage](./screenshots/home.jpg "Homepage")
+![Admin Homepage](./screenshots/admin_home.jpg "Admin Homepage")
+![Admin Subject](./screenshots/admin_subject.jpg "Admin Subject")
+![Admin Paper](./screenshots/admin_paper.jpg "Admin Paper")
+![Telegram Channel](./screenshots/telegram.jpg "Telegram Channel")
 
 ## Getting Started Locally
 
 1. **Clone the repository**
+```
 git clone https://github.com/xiaoli/GPTarXBot.git
+```
 
 2. **Navigate to the project directory**
+```
 cd GPTarXBot
+```
 
 3. **Install the required dependencies**
+```
 pip install -r requirements.txt
+```
 
 4. **DB migration**
+```
 python manage.py migrate
+```
 
 5. **Environment Variables**
+```
 cp env_example .env
 EDIT .env TO FILL YOUR OWN SETTINGS
+```
 
 6. **Create a superuser account**
+```
 python manage.py createsuperuser
+```
 
 7. **Run the web server**
+```
 python manage.py runserver
+```
 
 8. **Add some interesting subjects**
+```
 Admin >> Home >> Research >> Subjects >> Add Subject
+```
 
 9. **Run the bot**
+```
 python manage.py grabpapers
+```
 
 <hr/>
 
