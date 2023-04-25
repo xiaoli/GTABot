@@ -6,12 +6,15 @@ from django.shortcuts import get_object_or_404
 
 from .models import Subject, Paper
 
-@login_required(login_url='/admin/login/')
 def index(request):
-    paper_list = Paper.objects.all().order_by('-published_date')
+    sub_id = request.GET.get('sub_id', False)
+    if sub_id:
+        paper_list = Paper.objects.filter(subject__id=sub_id).order_by('-updated_date')
+    else:
+        paper_list = Paper.objects.all().order_by('-updated_date')
+    
     return render(request, "index.html", {"paper_list": paper_list})
 
-@login_required(login_url='/admin/login/')
 def subjects(request):
     subjects = Subject.objects.all()
     return render(request, "subjects.html", {"subjects": subjects})

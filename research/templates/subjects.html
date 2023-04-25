@@ -2,20 +2,45 @@
 {% load static %}
 
 {% block content %}
-  <div class="container">
-
-
-<h2>Subjects</h2>
-
-
-<ul>
-
-{% for s in subjects %}
-    <li>{{ s.name }} - {{ s.keywords}}</li>
-{% endfor %}
-
-</ul>
-
+<div class="container">
+  <h2>Research Interests</h2>
+  <div class="row content">
+      <div class="row mb-3">
+          <div class="col-sm-12">
+              <table class="table table-hover">
+                <thead>
+                  <tr class="text-center">
+                      <th scope="col">Subject</th>
+                      <th scope="col">Keywords</th>
+                      <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for s in subjects %}
+                    <tr id="{{ s.id }}">
+                        <td class="text-center">
+                          <a href="{% url 'index' %}?sub_id={{ s.id }}">{{ s.name }}</a>
+                        </td>
+                        <td>
+                          <pre>
+                            {{ s.keywords }}
+                          </pre>
+                        </td>
+                        <td class="text-center">
+                          <div class="container">
+                            <div class="row g-2">
+                              <a href="{% url 'index' %}?sub_id={{ s.id }}">Papers</a>
+                            </div>
+                          </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
 </div>
 
 {% endblock %}
+
