@@ -24,13 +24,14 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         
         enable_telegram_channel_flag = os.environ.get('ENABLE_TELEGRAM_CHANNEL_MSG', False).lower() in ('true', '1')
+        max_results_count = os.environ.get('ARXIV_MAX_RESULTS_COUNT', 10)
         
         subjects = Subject.objects.all()
 
         for s in subjects:
             search = arxiv.Search(
               query = s.keywords,
-              max_results = 10,
+              max_results = max_results_count,
               sort_by = arxiv.SortCriterion.LastUpdatedDate,
               sort_order = arxiv.SortOrder.Descending
             )
