@@ -36,6 +36,7 @@ class Command(BaseCommand):
               sort_order = arxiv.SortOrder.Descending
             )
             
+            print("======", search.results())
             for p in search.results():
                 paper, created = Paper.objects.get_or_create(short_id=p.get_short_id())
                 paper.subject = s

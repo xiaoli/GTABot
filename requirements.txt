@@ -7,4 +7,4 @@ psycopg2>=2.0,<3.0
 requests
 openai
 python-telegram-bot
-arxiv
+arxiv @ git+https://github.com/xiaoli/arxiv.py@master
