@@ -12,7 +12,7 @@ Welcome to the GTABot project, an open-source AI-driven bot that helps users exp
 ## Screenshots
 |Name|Preview|Note|
 |:-|:-|:-|
-|Homepage|<img src="./screenshots/home.jpg" alt="Homepage" width="300" height="230">||
+|Homepage|<img src="./screenshots/home.png" alt="Homepage" width="300" height="230">||
 |Admin Homepage|<img src="./screenshots/admin_home.jpg" alt="Admin Homepage" width="300" height="230">||
 |Admin Subject|<img src="./screenshots/admin_subject.jpg" alt="Admin Subject" width="300" height="230">||
 |Admin Paper|<img src="./screenshots/admin_paper.jpg" alt="Admin Paper" width="300" height="230">||
