@@ -31,12 +31,11 @@ class Command(BaseCommand):
         for s in subjects:
             search = arxiv.Search(
               query = s.keywords,
-              max_results = max_results_count,
+              max_results = int(max_results_count),
               sort_by = arxiv.SortCriterion.LastUpdatedDate,
               sort_order = arxiv.SortOrder.Descending
             )
             
-            print("======", dir(search.results()))
             for p in search.results():
                 paper, created = Paper.objects.get_or_create(short_id=p.get_short_id())
                 paper.subject = s
